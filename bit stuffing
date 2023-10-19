@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+	char data[20],stdata[30];
+	int i,j,count;
+	printf("enter the data:");
+	scanf("%s",&data);
+	i=0;
+	j=0;
+	count=0;
+	while(data[i]!='\0')
+	{
+		stdata[j]=data[i];
+		if(data[i]=='1')
+		{
+			count++;
+		}
+		if (count==5){
+			stdata[++j]='0';
+			count=0;
+		}
+		i++;
+		j++;
+	}
+	stdata[j]='\0';
+	printf("original sata:%s/n",data);
+	printf("after bit stuffing:%s/n",stdata);
+	return 0;
+}
